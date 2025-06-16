@@ -1,0 +1,8 @@
+python-dotenv
+logfire
+httpx
+pydantic-ai
+openai
+supabase
+tiktoken
+typing-extensions
