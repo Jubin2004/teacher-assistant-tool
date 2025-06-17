@@ -112,7 +112,7 @@ async def run_agent_with_streaming(user_input: str):
 
 
 async def main():
-    st.title("Teacher Knowledge Graph Assistant")
+    st.title("Teacher Assistant Tool")
     st.write("How can I assist you?")
 
     # Initialize chat history in session state if not present
