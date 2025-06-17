@@ -62,7 +62,6 @@ async def compare_2_KGs(ctx: RunContext[TeacherAssistant], user_query: str, matc
     Retrieve relevant information about 2 given courses and compare 
     their Knowledge Graphs(KGs) to give a relevant answer to the question of the educator.
     """
-    print('compare_2_KGs')
     try:
         query_embedding1 = await get_embedding(user_query[0], ctx.deps.openai_client)
         query_embedding2 = await get_embedding(user_query[1], ctx.deps.openai_client)
@@ -141,7 +140,6 @@ async def retrieve_syllabi_information(ctx: RunContext[TeacherAssistant], user_q
     Use this information to generate a relevant answer.
     """
     try:
-        print("retrieve_syllabi_information")
         query_embedding = await get_embedding(user_query, ctx.deps.openai_client)
         result = ctx.deps.supabase.rpc(
             'retrieve_syllabi',
@@ -169,7 +167,6 @@ async def retrieve_syllabi_information(ctx: RunContext[TeacherAssistant], user_q
         {safe_chunks}
         Provide a relevant answer  corresponding to the question of the educator.
         """
-        print(prompt)
         return prompt
 
     except Exception as e:
@@ -184,8 +181,6 @@ async def compare_syllabi(ctx: RunContext[TeacherAssistant], user_query: str, ma
     Use this information to generate a relevant answer and compare them.
     """
     try:
-
-        print("compare_syllabi")
         query_embedding1 = await get_embedding(user_query[0], ctx.deps.openai_client)
         query_embedding2 = await get_embedding(user_query[1], ctx.deps.openai_client)
         result = ctx.deps.supabase.rpc(
@@ -257,8 +252,6 @@ async def compare_syllabi_KG(ctx: RunContext[TeacherAssistant], user_query: str,
     Use this information to generate a relevant answer and compare them.
     """
     try:
-
-        print("compare_syllabi_KG")
         query_embedding = await get_embedding(user_query, ctx.deps.openai_client)
         result1 = ctx.deps.supabase.rpc(
             'retrieve_syllabi',
@@ -334,10 +327,7 @@ async def retrieve_relevant_nodes(ctx: RunContext[TeacherAssistant], user_query:
     Use this information to give a relevant answer to the question of the educator.
     """
     try:
-        print("retrieve_relevant_nodes")
-        print(user_query)
         query_embedding = await get_embedding(user_query, ctx.deps.openai_client)
-        # print(query_embedding)
         result = ctx.deps.supabase.rpc(
             'match_graph_nodes',
             {
@@ -376,8 +366,6 @@ async def retrieve_relevant_edges(ctx: RunContext[TeacherAssistant], user_query:
     Retrieve relevant graph edges based on the query using vector similarity search.
     """
     try:
-        print("retrieve_relevant_edges")
-        print(user_query)
         query_embedding = await get_embedding(user_query, ctx.deps.openai_client)
 
         result = ctx.deps.supabase.rpc(
