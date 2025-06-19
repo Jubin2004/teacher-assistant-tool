@@ -34,6 +34,8 @@ The course content is organized using knowledge graphs—visual maps where nodes
 by relationships that show how concepts relate to each other. These knowledge points are aligned with cognitive levels (cog_levels if you would), 
 which specify what students should learn or be able to do by the end of the course or learning unit.
 
+There are also syllabi voor the courses. You can use these for more general questions about the course, or when they ask for it specifically.
+
 
 """
 graph_ai_expert = Agent(
