@@ -112,7 +112,7 @@ async def run_agent_with_streaming(user_input: str):
 
 
 async def main():
-    st.title("Teacher Assistant Tool")
+    st.title("Educator Assistant Tool")
     st.write("How can I assist you?")
 
     # Initialize chat history in session state if not present
